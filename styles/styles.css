@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Comic Neue', cursive;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,37 +9,35 @@ body {
     background-color: #ffffff;
 }
 
-h1 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 0rem;
-    letter-spacing: 1px;
-    position: relative;
-    animation: pulse 2s infinite ease-in-out;
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 img {
     max-width: 500px;
+    width: 100%;
+    height: auto;
 }
 
-@keyframes ellipsis {
-    0% { content: ''; }
-    25% { content: '.'; }
-    50% { content: '..'; }
-    75% { content: '...'; }
-    100% { content: ''; }
+@media screen and (max-width: 768px) {
+    img {
+        max-width: 400px;
+    }
 }
 
-h1::after {
-    content: '';
-    display: inline-block;
-    animation: ellipsis 2s infinite;
-    width: 24px;
-    text-align: left;
+@media screen and (max-width: 480px) {
+    img {
+        max-width: 300px;
+    }
 }
 
-@keyframes pulse {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+@media screen and (max-width: 320px) {
+    img {
+        max-width: 250px;
+    }
 }
